@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-col w-full max-w-xl items-center justify-center py-20 px-4 bg-white dark:bg-zinc-900 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-8 text-black dark:text-zinc-50">ネットワーク情報チェック</h1>
+        <h1 className="text-2xl font-bold mb-8 text-black dark:text-zinc-50">ネットワーク情報チェッカー</h1>
         <table className="w-full border border-zinc-200 dark:border-zinc-700 text-left mb-8">
           <tbody>
             <tr className="border-b border-zinc-200 dark:border-zinc-700">
