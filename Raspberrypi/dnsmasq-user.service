@@ -1,0 +1,16 @@
+# /etc/systemd/system/dnsmasq-user.service
+
+[Unit]
+Description=DNSMasq User Service
+After=NetworkManager.service
+BindsTo=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStartPre=ip addr add 10.0.10.1/24 dev wlan0
+ExecStart=dnsmasq --interface=wlan0 --dhcp-range=10.0.10.1,10.0.10.50,255.255.255.0,12h --no-daemon
+ExecStopPost=ip addr del 10.0.10.1/24 dev wlan0
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+# /etc/systemd/system/hostapd-user.service
+
+[Unit]
+Description=Hostapd User Service
+BindsTo=NetworkManager.service
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=hostapd /etc/hostapd.conf
+Restart=always
+
+[Install]
+WantedBy=default.target

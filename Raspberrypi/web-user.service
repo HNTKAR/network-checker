@@ -1,0 +1,11 @@
+# ~/.config/systemd/user/web-user.service
+
+[Service]
+Type=simple
+# ExecStartPre=npm run build
+ExecStart=npm run start
+Restart=always
+WorkingDirectory=/%h/network-checker
+
+[Install]
+WantedBy=default.target
