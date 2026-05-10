@@ -5,6 +5,7 @@
 ```bash
 sudo apt install hostapd
 sudo cp hostapd.conf /etc/hostapd.conf
+sudo sed -i "s/password/$(openssl rand -base64 12)/g" /etc/hostapd.conf
 sudo cp hostapd-user.service /etc/systemd/system/hostapd-user.service
 sudo systemctl enable --now hostapd-user.service
 ```
